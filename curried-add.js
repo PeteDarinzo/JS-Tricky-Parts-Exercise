@@ -1,10 +1,12 @@
-function curriedAdd(total) {
-  if (total === undefined) return 0;
-  return function addNext(num) {
-    if (!num) return total;
-    total += num;
+const curriedAdd = (x) => {
+  if (x === undefined) return 0;
+  const addNext = (y) => {
+    if (y === undefined) return (x);
+    x += y;
     return addNext;
   }
+  return addNext;
 }
+
 
 module.exports = { curriedAdd };
